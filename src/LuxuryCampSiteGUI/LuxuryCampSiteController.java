@@ -16,7 +16,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 public class LuxuryCampSiteController implements Initializable {
-    
+
     @FXML
     private TableView<String> AccommodationTableID;
     @FXML
@@ -36,8 +36,6 @@ public class LuxuryCampSiteController implements Initializable {
 
     @FXML
     private ComboBox<String> AreaBox;
-
-    private String[] Area = {"Hilltop", "Wild Meadow", "Woodland", "Lakeview"};
 
     @FXML
     private TextField AreaDescriptionID;
@@ -72,10 +70,12 @@ public class LuxuryCampSiteController implements Initializable {
     private TextField NumberOfNightsID;
 
     private String[] CleaningStatus = {"Clean", "Not Clean"};
-
+    
+    private String[] Area = {"Woodland", "Wild Meadow", "Hilltop", "Lakeview"};
+    
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //Started of GUI
+        //GUI intialized
         System.out.println("GUI Initialized!");
 
         AreaBox.getItems().addAll(Area);
@@ -84,7 +84,7 @@ public class LuxuryCampSiteController implements Initializable {
 
     @FXML
     void SelectArea(ActionEvent event) {
-        String AreaDescription = AreaBox.getSelectionModel().getSelectedItem().toString();
+        String AreaDescription = AreaBox.getSelectionModel().getSelectedItem();
         AreaDescriptionID.setText(AreaDescription);
     }
 
@@ -145,8 +145,6 @@ public class LuxuryCampSiteController implements Initializable {
 
         if (CheckInDateDayID.getText().length() > 2 || CheckInDateDayID.getText().length() < 1) { //Characters not value, i forget
             CheckInDateDayID.setStyle("-fx-border-color:red;");
-
-            CheckInDateYearID.setStyle("-fx-border-color:red;");
         } else {
             CheckInDateDayID.setStyle(null);
         }
@@ -163,7 +161,7 @@ public class LuxuryCampSiteController implements Initializable {
             CheckInDateYearID.setStyle(null);
         }
 
-        System.out.println("CheckedIn!");
+        System.out.println("Checked In!");
 
     }
 
@@ -183,7 +181,7 @@ public class LuxuryCampSiteController implements Initializable {
             System.out.println("Breakfast not required");
         }
 
-        System.out.println("CheckedOut!");
+        System.out.println("Checked Out!");
     }
 
 }

@@ -32,15 +32,15 @@
             </font>
         </Text>
         <TextField editable="false" layoutX="417.0" layoutY="45.0" prefHeight="25.0" prefWidth="82.0" />
-        <TableView fx:id="AccomodationTableID" layoutX="14.0" layoutY="82.0" prefHeight="186.0" prefWidth="553.0">
+        <TableView fx:id="AccommodationTableID" layoutX="14.0" layoutY="82.0" prefHeight="186.0" prefWidth="553.0">
             <columns>
-                <TableColumn prefWidth="52.0" text="No." />
-                <TableColumn prefWidth="98.0" text="Accomm. Type" />
-                <TableColumn prefWidth="98.0" text="Occupancy" />
-                <TableColumn prefWidth="87.0" text="Availability" />
-                <TableColumn prefWidth="73.0" text="Status" />
-                <TableColumn prefWidth="73.0" text="Guests" />
-                <TableColumn prefWidth="73.0" text="Breakfast" />
+                <TableColumn fx:id="NoColumnID" prefWidth="52.0" text="No." />
+                <TableColumn fx:id="AccommTypeColumnID" prefWidth="98.0" text="Accomm. Type" />
+                <TableColumn fx:id="OccupancyColumnID" prefWidth="98.0" text="Occupancy" />
+                <TableColumn fx:id="AvailabilityColumnID" prefWidth="87.0" text="Availability" />
+                <TableColumn fx:id="StatusColumnID" prefWidth="73.0" text="Status" />
+                <TableColumn fx:id="GuestsColumnID" prefWidth="73.0" text="Guests" />
+                <TableColumn fx:id="BreakfastColumnID" prefWidth="73.0" text="Breakfast" />
             </columns>
         </TableView>
         <Text layoutX="21.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Maintenance">
