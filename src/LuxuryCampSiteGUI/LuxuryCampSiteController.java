@@ -86,8 +86,8 @@ public class LuxuryCampSiteController implements Initializable {
     void SelectArea(ActionEvent event) {
         String AreaDescription = AreaBox.getSelectionModel().getSelectedItem();
         AreaDescriptionID.setText(AreaDescription);
-    }
-
+        }
+    
     @FXML
     private void CheckedIn(ActionEvent event) {
         //Irrelavent for now but maybe need to use if issue come up
@@ -160,7 +160,13 @@ public class LuxuryCampSiteController implements Initializable {
         } else {
             CheckInDateYearID.setStyle(null);
         }
-
+        
+        if (NumberOfNightsID.getText().length() > 2 || NumberOfNightsID.getText().length() < 1) {
+            NumberOfNightsID.setStyle("-fx-border-color:red;");
+        } else {
+            NumberOfNightsID.setStyle(null);
+        }
+        
         System.out.println("Checked In!");
 
     }
@@ -180,7 +186,54 @@ public class LuxuryCampSiteController implements Initializable {
         } else {
             System.out.println("Breakfast not required");
         }
+        
+        if (FirstNameID.getText().length() <= 2) {
+            FirstNameID.setStyle("-fx-border-color: red;");
+        } else {
+            FirstNameID.setStyle(null); 
+        }
+        if (LastNameID.getText().length() <= 2) {
+            LastNameID.setStyle("-fx-border-color: red;");
+        } else {
+            LastNameID.setStyle(null);
+        }
 
+        if (PhoneNumberID.getText().length() >= 12 || PhoneNumberID.getText().length() < 11) {
+            PhoneNumberID.setStyle("-fx-border-color: red;");
+        } else {
+            PhoneNumberID.setStyle(null);
+        }
+
+        if (NumberOfGuestsID.getText().length() < 1 || NumberOfGuestsID.getText().length() > 10) {
+            NumberOfGuestsID.setStyle("-fx-border-color:red;");
+        } else {
+            NumberOfGuestsID.setStyle(null);
+        }
+
+        if (CheckInDateDayID.getText().length() > 2 || CheckInDateDayID.getText().length() < 1) { //Characters not value, i forget
+            CheckInDateDayID.setStyle("-fx-border-color:red;");
+        } else {
+            CheckInDateDayID.setStyle(null);
+        }
+
+        if (CheckInDateMonthID.getText().length() > 2 || CheckInDateMonthID.getText().length() < 1) {
+            CheckInDateMonthID.setStyle("-fx-border-color:red;");
+        } else {
+            CheckInDateMonthID.setStyle(null);
+        }
+
+        if (CheckInDateYearID.getText().length() > 2 || CheckInDateYearID.getText().length() < 1) {
+            CheckInDateYearID.setStyle("-fx-border-color:red;");
+        } else {
+            CheckInDateYearID.setStyle(null);
+        }
+        
+        if (NumberOfNightsID.getText().length() > 2 || NumberOfNightsID.getText().length() < 1) {
+            NumberOfNightsID.setStyle("-fx-border-color:red;");
+        } else {
+            NumberOfNightsID.setStyle(null);
+        }
+        
         System.out.println("Checked Out!");
     }
 
