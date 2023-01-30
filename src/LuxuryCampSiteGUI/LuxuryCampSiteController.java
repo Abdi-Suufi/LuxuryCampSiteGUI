@@ -18,7 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class LuxuryCampSiteController implements Initializable {
-
+    
     @FXML
     private TableView<String> AccommodationTableID;
     @FXML
@@ -79,6 +79,7 @@ public class LuxuryCampSiteController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //GUI intialized
+        
         System.out.println("GUI Initialized!");
         
 
