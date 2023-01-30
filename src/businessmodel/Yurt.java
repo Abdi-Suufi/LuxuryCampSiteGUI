@@ -9,7 +9,6 @@ package businessmodel;
  * @author abdis
  */
 public class Yurt {
-    private String Yurt;
     String WildMeadow;
     int 4;
     int 2;

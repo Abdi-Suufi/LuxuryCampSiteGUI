@@ -14,4 +14,3 @@ public class ShepherdHut {
     int 3;
     float 140;
 }
-

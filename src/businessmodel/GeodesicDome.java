@@ -9,5 +9,9 @@ package businessmodel;
  * @author abdis
  */
 public class GeodesicDome {
-    
+
+    String Woodland;
+    int 4;
+    int 2;
+    float 120;
 }
