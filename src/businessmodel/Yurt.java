@@ -20,4 +20,36 @@ public class Yurt {
         this.Accommodates = Accommodates;
         this.PricePerNight = PricePerNight;
     }
+
+    public String getWildMeadow() {
+        return WildMeadow;
+    }
+
+    public void setWildMeadow(String WildMeadow) {
+        this.WildMeadow = WildMeadow;
+    }
+
+    public int getNumberInZone() {
+        return NumberInZone;
+    }
+
+    public void setNumberInZone(int NumberInZone) {
+        this.NumberInZone = 4;
+    }
+
+    public int getAccommodates() {
+        return Accommodates;
+    }
+
+    public void setAccommodates(int Accommodates) {
+        this.Accommodates = 2;
+    }
+
+    public int getPricePerNight() {
+        return PricePerNight;
+    }
+
+    public void setPricePerNight(int PricePerNight) {
+        this.PricePerNight = 110;
+    }
 }

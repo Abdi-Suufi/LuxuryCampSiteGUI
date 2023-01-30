@@ -10,6 +10,9 @@ package businessmodel;
  */
 public class GeodesicDome {
     String Woodland;
+    int NumberInZone;
+    int Accommodates;
+    int PricePerNight;
 
     public GeodesicDome(String Woodland, int NumberInZone, int Accommodates, int PricePerNight) {
         this.Woodland = Woodland;
@@ -17,7 +20,37 @@ public class GeodesicDome {
         this.Accommodates = Accommodates;
         this.PricePerNight = PricePerNight;
     }
-    int NumberInZone;
-    int Accommodates;
-    int PricePerNight;
+
+    public String getWoodland() {
+        return Woodland;
+    }
+
+    public void setWoodland(String Woodland) {
+        this.Woodland = Woodland;
+    }
+
+    public int getNumberInZone() {
+        return NumberInZone;
+    }
+
+    public void setNumberInZone(int NumberInZone) {
+        this.NumberInZone = 4;
+    }
+
+    public int getAccommodates() {
+        return Accommodates;
+    }
+
+    public void setAccommodates(int Accommodates) {
+        this.Accommodates = 2;
+    }
+
+    public int getPricePerNight() {
+        return PricePerNight;
+    }
+
+    public void setPricePerNight(int PricePerNight) {
+        this.PricePerNight = 120;
+    }
+    
 }

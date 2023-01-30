@@ -10,6 +10,9 @@ package businessmodel;
  */
 public class ShepherdHut {
     String Hilltop;
+    int NumberInZone;
+    int Accommodates;
+    int PricePerNight;
 
     public ShepherdHut(String Hilltop, int NumberInZone, int Accommodates, int PricePerNight) {
         this.Hilltop = Hilltop;
@@ -17,7 +20,37 @@ public class ShepherdHut {
         this.Accommodates = Accommodates;
         this.PricePerNight = PricePerNight;
     }
-    int NumberInZone;
-    int Accommodates;
-    int PricePerNight;
+
+    public String getHilltop() {
+        return Hilltop;
+    }
+
+    public void setHilltop(String Hilltop) {
+        this.Hilltop = Hilltop;
+    }
+
+    public int getNumberInZone() {
+        return NumberInZone;
+    }
+
+    public void setNumberInZone(int NumberInZone) {
+        this.NumberInZone = 3;
+    }
+
+    public int getAccommodates() {
+        return Accommodates;
+    }
+
+    public void setAccommodates(int Accommodates) {
+        this.Accommodates = 3;
+    }
+
+    public int getPricePerNight() {
+        return PricePerNight;
+    }
+
+    public void setPricePerNight(int PricePerNight) {
+        this.PricePerNight = 140;
+    }
+    
 }
