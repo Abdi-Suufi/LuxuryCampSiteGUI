@@ -13,12 +13,21 @@ public class GeodesicDome {
     int NumberInZone;
     int Accommodates;
     int PricePerNight;
+    String Description;
 
-    public GeodesicDome(String Woodland, int NumberInZone, int Accommodates, int PricePerNight) {
+    public GeodesicDome(String Woodland, int NumberInZone, int Accommodates, int PricePerNight, String Description) {
         this.Woodland = Woodland;
         this.NumberInZone = NumberInZone;
         this.Accommodates = Accommodates;
         this.PricePerNight = PricePerNight;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String Description) {
+        this.Description = Description;
     }
 
     public String getWoodland() {

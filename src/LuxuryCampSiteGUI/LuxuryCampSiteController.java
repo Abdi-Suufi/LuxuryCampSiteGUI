@@ -101,8 +101,18 @@ public class LuxuryCampSiteController implements Initializable {
     
     @FXML
     void SelectArea(ActionEvent event) {
-        String AreaDescription = AreaBox.getSelectionModel().getSelectedItem();
-        AreaDescriptionID.setText(AreaDescription);
+        if (AreaBox.getSelectionModel().isSelected(0)) {
+            AreaDescriptionID.setText("Woodland description here");
+        }
+        if  (AreaBox.getSelectionModel().isSelected(1)) {
+            AreaDescriptionID.setText("Wild Meadow description here");
+        }
+        if (AreaBox.getSelectionModel().isSelected(2)) {
+            AreaDescriptionID.setText("Hilltop description here");
+        }
+        if (AreaBox.getSelectionModel().isSelected(3)) {
+            AreaDescriptionID.setText("Lakeview description here");
+        }
         }
     
     @FXML
@@ -257,5 +267,4 @@ public class LuxuryCampSiteController implements Initializable {
         
         System.out.println("Checked Out!");
     }
-
 }

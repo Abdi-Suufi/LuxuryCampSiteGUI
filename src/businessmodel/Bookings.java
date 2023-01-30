@@ -13,6 +13,13 @@ public class Bookings {
     int NumberOfNights;
     float PricePerNight;
 
+    public Bookings(int NumberOfGuests, int NumberOfNights, float PricePerNight, String CheckInDate) {
+        this.NumberOfGuests = NumberOfGuests;
+        this.NumberOfNights = NumberOfNights;
+        this.PricePerNight = PricePerNight;
+        this.CheckInDate = CheckInDate;
+    }
+
     public int getNumberOfGuests() {
         return NumberOfGuests;
     }

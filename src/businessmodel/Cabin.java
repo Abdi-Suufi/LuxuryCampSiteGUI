@@ -9,18 +9,35 @@ package businessmodel;
  * @author abdis
  */
 public class Cabin {
-    String Lakeview;
-    int NumberInZone;
-    int Accommodates;
-    int PricePerNight;
+    private String Lakeview;
+    private int NumberInZone;
+    private int Accommodates;
+    private int PricePerNight;
+    private String CabinDescription;
+    
 
-    public Cabin(String Lakeview, int NumberInZone, int Accommodates, int PricePerNight) {
+    public Cabin(String Lakeview, int NumberInZone, int Accommodates, int PricePerNight, String CabinDescription) {
         this.Lakeview = Lakeview;
         this.NumberInZone = NumberInZone;
         this.Accommodates = Accommodates;
         this.PricePerNight = PricePerNight;
+        this.CabinDescription = CabinDescription;
     }
 
+    public Cabin() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    
+
+    public String getCabinDescription() {
+        return CabinDescription;
+    }
+
+    public void setCabinDescription(String CabinDescription) {
+        this.CabinDescription = CabinDescription;
+    }
+    
     public String getLakeview() {
         return Lakeview;
     }
