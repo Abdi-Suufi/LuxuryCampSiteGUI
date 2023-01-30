@@ -10,5 +10,39 @@ package businessmodel;
  */
 public class Bookings {
     int NumberOfGuests;
-    int NumberOf
+    int NumberOfNights;
+    float PricePerNight;
+
+    public int getNumberOfGuests() {
+        return NumberOfGuests;
+    }
+
+    public void setNumberOfGuests(int NumberOfGuests) {
+        this.NumberOfGuests = NumberOfGuests;
+    }
+
+    public int getNumberOfNights() {
+        return NumberOfNights;
+    }
+
+    public void setNumberOfNights(int NumberOfNights) {
+        this.NumberOfNights = NumberOfNights;
+    }
+
+    public float getPricePerNight() {
+        return PricePerNight;
+    }
+
+    public void setPricePerNight(float PricePerNight) {
+        this.PricePerNight = PricePerNight;
+    }
+
+    public String getCheckInDate() {
+        return CheckInDate;
+    }
+
+    public void setCheckInDate(String CheckInDate) {
+        this.CheckInDate = CheckInDate;
+    }
+    String CheckInDate;
 }

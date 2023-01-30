@@ -75,11 +75,11 @@
                 <Font size="14.0" />
             </font>
         </Text>
-        <TextField layoutX="142.0" layoutY="383.0" />
-        <TextField layoutX="142.0" layoutY="419.0" />
-        <TextField layoutX="142.0" layoutY="456.0" />
-        <TextField layoutX="142.0" layoutY="493.0" />
-        <TextArea layoutX="20.0" layoutY="531.0" prefHeight="87.0" prefWidth="272.0" />
+        <TextField editable="false" layoutX="142.0" layoutY="383.0" />
+        <TextField editable="false" layoutX="142.0" layoutY="419.0" />
+        <TextField editable="false" layoutX="142.0" layoutY="456.0" />
+        <TextField editable="false" layoutX="142.0" layoutY="493.0" />
+        <TextArea editable="false" layoutX="20.0" layoutY="531.0" prefHeight="87.0" prefWidth="272.0" />
         <Text layoutX="324.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accommodation Reception">
             <font>
                 <Font size="18.0" />
