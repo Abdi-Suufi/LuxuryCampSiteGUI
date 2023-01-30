@@ -9,5 +9,8 @@ package businessmodel;
  * @author abdis
  */
 public class Cabin {
-    
+String Lakeview;
+int 3;
+int 4;
+float 160;
 }

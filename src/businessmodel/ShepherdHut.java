@@ -9,5 +9,9 @@ package businessmodel;
  * @author abdis
  */
 public class ShepherdHut {
-    
+    String Hilltop;
+    int 3;
+    int 3;
+    float 140;
 }
+
