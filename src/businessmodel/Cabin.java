@@ -9,8 +9,15 @@ package businessmodel;
  * @author abdis
  */
 public class Cabin {
-String Lakeview;
-int 3;
-int 4;
-float 160;
+    String Lakeview;
+
+    public Cabin(String Lakeview, int NumberInZone, int Accommodates, int PricePerNight) {
+        this.Lakeview = Lakeview;
+        this.NumberInZone = NumberInZone;
+        this.Accommodates = Accommodates;
+        this.PricePerNight = PricePerNight;
+    }
+    int NumberInZone;
+    int Accommodates;
+    int PricePerNight;
 }

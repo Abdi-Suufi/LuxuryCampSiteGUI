@@ -9,9 +9,15 @@ package businessmodel;
  * @author abdis
  */
 public class GeodesicDome {
-
     String Woodland;
-    int 4;
-    int 2;
-    float 120;
+
+    public GeodesicDome(String Woodland, int NumberInZone, int Accommodates, int PricePerNight) {
+        this.Woodland = Woodland;
+        this.NumberInZone = NumberInZone;
+        this.Accommodates = Accommodates;
+        this.PricePerNight = PricePerNight;
+    }
+    int NumberInZone;
+    int Accommodates;
+    int PricePerNight;
 }

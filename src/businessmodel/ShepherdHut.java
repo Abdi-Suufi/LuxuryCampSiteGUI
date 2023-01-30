@@ -10,7 +10,14 @@ package businessmodel;
  */
 public class ShepherdHut {
     String Hilltop;
-    int 3;
-    int 3;
-    float 140;
+
+    public ShepherdHut(String Hilltop, int NumberInZone, int Accommodates, int PricePerNight) {
+        this.Hilltop = Hilltop;
+        this.NumberInZone = NumberInZone;
+        this.Accommodates = Accommodates;
+        this.PricePerNight = PricePerNight;
+    }
+    int NumberInZone;
+    int Accommodates;
+    int PricePerNight;
 }
