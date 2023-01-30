@@ -16,6 +16,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import businessmodel.Yurt;
+import businessmodel.ShepherdHut;
+import businessmodel.GeodesicDome;
+import businessmodel.Cabin;
 
 public class LuxuryCampSiteController implements Initializable {
     
