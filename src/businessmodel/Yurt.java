@@ -8,7 +8,7 @@ package businessmodel;
  *
  * @author abdis
  */
-public class Yurts {
+public class Yurt {
     private String yurts;
     
 }
