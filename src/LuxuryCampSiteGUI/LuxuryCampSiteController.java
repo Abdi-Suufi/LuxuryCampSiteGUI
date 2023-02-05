@@ -20,13 +20,14 @@ import businessmodel.Yurt;
 import businessmodel.ShepherdHut;
 import businessmodel.GeodesicDome;
 import businessmodel.Cabin;
+import javafx.scene.input.MouseEvent;
 
 public class LuxuryCampSiteController implements Initializable {
     
     @FXML
     private TableView<String> AccommodationTableID;
     @FXML
-    private TableColumn<String, String> NoColumnID;
+    private TableColumn<String, Integer> NoColumnID;
     @FXML
     private TableColumn<String, String> AccommTypeColumnID;
     @FXML
@@ -36,10 +37,11 @@ public class LuxuryCampSiteController implements Initializable {
     @FXML
     private TableColumn<String, String> StatusColumnID;
     @FXML
-    private TableColumn<String, String> GuestsColumnID;
+    private TableColumn<String, Integer> GuestsColumnID;
     @FXML
     private TableColumn<String, String> BreakfastColumnID;
 
+    
     @FXML
     private ComboBox<String> AreaBox;
 
@@ -97,6 +99,7 @@ public class LuxuryCampSiteController implements Initializable {
         //StatusColumnID.setCellValueFactory(new PropertyValueFactory<Bookings, String>("status"));
         //GuestsColumnID.setCellValueFactory(new PropertyValueFactory<Bookings, String>("numberGuests"));
         //BreakfastColumnID.setCellValueFactory(new PropertyValueFactory<Bookings, String>("breakfast"));
+        
     }
     
     @FXML

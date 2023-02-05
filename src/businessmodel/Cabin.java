@@ -24,12 +24,6 @@ public class Cabin {
         this.CabinDescription = CabinDescription;
     }
 
-    public Cabin() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    
-
     public String getCabinDescription() {
         return CabinDescription;
     }
