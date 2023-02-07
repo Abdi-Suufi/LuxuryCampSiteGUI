@@ -20,33 +20,41 @@ import businessmodel.Yurt;
 import businessmodel.ShepherdHut;
 import businessmodel.GeodesicDome;
 import businessmodel.Cabin;
+import LuxuryCampSiteGUI.AccomTable; //idk why i have to import this but wont work without
+import javafx.collections.FXCollections;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 
 public class LuxuryCampSiteController implements Initializable {
     
     @FXML
-    private TableView<String> AccommodationTableID;
+    private TableView<AccomTable> AccommodationTableID;
     @FXML
-    private TableColumn<String, Integer> NoColumnID;
+    private TableColumn<AccomTable, Integer> NoColumnID;
     @FXML
-    private TableColumn<String, String> AccommTypeColumnID;
+    private TableColumn<AccomTable, String> AccommTypeColumnID;
     @FXML
-    private TableColumn<String, String> OccupancyColumnID;
+    private TableColumn<AccomTable, String> OccupancyColumnID;
     @FXML
-    private TableColumn<String, String> AvailabilityColumnID;
+    private TableColumn<AccomTable, String> AvailabilityColumnID;
     @FXML
-    private TableColumn<String, String> StatusColumnID;
+    private TableColumn<AccomTable, String> StatusColumnID;
     @FXML
-    private TableColumn<String, Integer> GuestsColumnID;
+    private TableColumn<AccomTable, Integer> GuestsColumnID;
     @FXML
-    private TableColumn<String, String> BreakfastColumnID;
+    private TableColumn<AccomTable, String> BreakfastColumnID;
 
-    
     @FXML
     private ComboBox<String> AreaBox;
 
     @FXML
     private TextField AreaDescriptionID;
+    
+    @FXML
+    private TextField BreakfastNoID;
+    
+    @FXML
+    private TextField CleaningNoID;
 
     @FXML
     private ComboBox<String> CleaningStatusBox;
@@ -77,6 +85,35 @@ public class LuxuryCampSiteController implements Initializable {
 
     @FXML
     private TextField NumberOfNightsID;
+    
+    @FXML
+    private Button CheckInButtonID;
+    
+    @FXML
+    private Button CheckOutButtonID;
+    
+    @FXML
+    private TextField AccommTypeID;
+    
+    @FXML
+    private TextField AccommNoID;
+    
+    @FXML
+    private TextField AccomodatesID;
+    
+    @FXML
+    private TextField PricePerNightID;
+    
+    @FXML
+    void displaySelected(MouseEvent event) {
+        AccomTable selectedItem = AccommodationTableID.getSelectionModel().getSelectedItem();
+        int number = selectedItem.getNoColumnID();
+        if (selectedItem == null) {
+            System.out.println("");
+        } else {
+            AccommNoID.setText(String.valueOf(number));
+        }
+    }
 
     private String[] CleaningStatus = {"Clean", "Not Clean"};
     
@@ -92,14 +129,104 @@ public class LuxuryCampSiteController implements Initializable {
         AreaBox.getItems().addAll(Area);
         CleaningStatusBox.getItems().addAll(CleaningStatus);
         
-        //NoColumnID.setCellValueFactory(new PropertyValueFactory<Bookings, String>("number"));
-        //AccommTypeColumnID.setCellValueFactory(new PropertyValueFactory<Bookings, String>("type"));
-        //OccupancyColumnID.setCellValueFactory(new PropertyValueFactory<Bookings, String>("occupancy"));
-        //AvailabilityColumnID.setCellValueFactory(new PropertyValueFactory<Bookings, String>("availability"));
-        //StatusColumnID.setCellValueFactory(new PropertyValueFactory<Bookings, String>("status"));
-        //GuestsColumnID.setCellValueFactory(new PropertyValueFactory<Bookings, String>("numberGuests"));
-        //BreakfastColumnID.setCellValueFactory(new PropertyValueFactory<Bookings, String>("breakfast"));
+        NoColumnID.setCellValueFactory(new PropertyValueFactory<AccomTable, Integer>("NoColumnID"));
+        AccommTypeColumnID.setCellValueFactory(new PropertyValueFactory<AccomTable, String>("AccommTypeColumnID"));
+        OccupancyColumnID.setCellValueFactory(new PropertyValueFactory<AccomTable, String>("OccupancyColumnID"));
+        AvailabilityColumnID.setCellValueFactory(new PropertyValueFactory<AccomTable, String>("AvailabilityColumnID"));
+        StatusColumnID.setCellValueFactory(new PropertyValueFactory<AccomTable, String>("StatusColumnID"));
+        GuestsColumnID.setCellValueFactory(new PropertyValueFactory<AccomTable, Integer>("GuestsColumnID"));
+        BreakfastColumnID.setCellValueFactory(new PropertyValueFactory<AccomTable, String>("BreakfastColumnID"));
         
+        AreaBox.setOnAction(e -> {
+            if (AreaBox.getSelectionModel().getSelectedItem().equals("Hilltop")) {
+                AreaDescriptionID.setText("Experience breathtaking panoramic views from the summit of a hill top and bask in the splendor of nature.");
+                loadHilltopTable();
+                loadHilltopData();
+            } else if (AreaBox.getSelectionModel().getSelectedItem().equals("Wild Meadow")) {
+                AreaDescriptionID.setText("Step into a world of untamed beauty with a visit to a wild meadow, be surrounded by towering grasses and wildflowers.");
+                setCleaningAndBreakfastReq();
+                loadWildMeadowTable();
+                loadWildMeadowData();
+            } else if (AreaBox.getSelectionModel().getSelectedItem().equals("Woodland")) {
+                AreaDescriptionID.setText("A woodland area echoing the sound of nature and wildlife, a haven for adventure seekers and nature lovers alike.");
+                setCleaningAndBreakfastReq();
+                loadWoodlandTable();
+                loadWoodlandData();
+            } else if (AreaBox.getSelectionModel().getSelectedItem().equals("Lakeview")) {
+                AreaDescriptionID.setText("Escape to a serene paradise with a stunning lakeview and gaze out at the still waters of a tranquil lake");
+                setCleaningAndBreakfastReq();
+                loadLakeviewTable();
+                loadLakeviewData();
+            }
+
+        });
+    }
+    public void loadHilltopTable() {
+        ObservableList<AccomTable> hilltopList = FXCollections.observableArrayList(
+                new AccomTable(1, "Shepherd Hut", "Unoccupied", "Available", "Clean", 0, "No"),
+                new AccomTable(2, "Shepherd Hut", "Unoccupied", "Available", "Clean", 0, "No"),
+                new AccomTable(3, "Shepherd Hut", "Unoccupied", "Available", "Clean", 0, "No")
+        );
+        AccommodationTableID.setItems(hilltopList);
+    }
+
+    public void loadWildMeadowTable() {
+        ObservableList<AccomTable> wildMeadowList = FXCollections.observableArrayList(
+                new AccomTable(1, "Yurt", "Unoccupied", "Available", "Clean", 0, "No"),
+                new AccomTable(2, "Yurt", "Unoccupied", "Available", "Clean", 0, "No"),
+                new AccomTable(3, "Yurt", "Unoccupied", "Available", "Clean", 0, "No"),
+                new AccomTable(4, "Yurt", "Unoccupied", "Available", "Clean", 0, "No")
+        );
+        AccommodationTableID.setItems(wildMeadowList);
+    }
+
+    public void loadWoodlandTable() {
+        ObservableList<AccomTable> woodlandList = FXCollections.observableArrayList(
+                new AccomTable(1, "Geodesic Dome", "Unoccupied", "Available", "Clean", 0, "No"),
+                new AccomTable(2, "Geodesic Dome", "Unoccupied", "Available", "Clean", 0, "No"),
+                new AccomTable(3, "Geodesic Dome", "Unoccupied", "Available", "Clean", 0, "No"),
+                new AccomTable(4, "Geodesic Dome", "Unoccupied", "Available", "Clean", 0, "No")
+        );
+        AccommodationTableID.setItems(woodlandList);
+    }
+
+    public void loadLakeviewTable() {
+        ObservableList<AccomTable> lakeviewList = FXCollections.observableArrayList(
+                new AccomTable(1, "Cabin", "Unoccupied", "Available", "Clean", 0, "No"),
+                new AccomTable(2, "Cabin", "Unoccupied", "Available", "Clean", 0, "No"),
+                new AccomTable(3, "Cabin", "Unoccupied", "Available", "Clean", 0, "No")
+        );
+        AccommodationTableID.setItems(lakeviewList);
+    }
+    
+    public void loadHilltopData() {
+        AccommTypeID.setText("Shepherd Hut");
+        AccomodatesID.setText("3");
+        PricePerNightID.setText("£140");
+
+    }
+
+    public void loadWildMeadowData() {
+        AccommTypeID.setText("Yurt");
+        AccomodatesID.setText("2");
+        PricePerNightID.setText("£110");
+    }
+
+    public void loadWoodlandData() {
+        AccommTypeID.setText("Geodesic Dome");
+        AccomodatesID.setText("2");
+        PricePerNightID.setText("£120");
+    }
+
+    public void loadLakeviewData() {
+        AccommTypeID.setText("Cabin");
+        AccomodatesID.setText("4");
+        PricePerNightID.setText("£160");
+    }
+
+    public void setCleaningAndBreakfastReq() {
+        BreakfastNoID.setText("0");
+        CleaningNoID.setText("0");
     }
     
     @FXML
@@ -120,18 +247,6 @@ public class LuxuryCampSiteController implements Initializable {
     
     @FXML
     private void CheckedIn(ActionEvent event) {
-        //Irrelavent for now but maybe need to use if issue come up
-        //String lastName = LastNameID.getText();
-        //String phonenumber = PhoneNumberID.getText();
-        //String numberOfGuests = NumberOfGuestsID.getText();
-        //String checkInDate = CheckInDateID.getText();
-        //String numberOfNights = NumberOfNightsID.getText(); 
-        
-        //Bookings bookings = new Bookings (NumberOfGuestsID.getText());
-        //ObservableList<Bookings> bookings = AccommodationTableID.getItems();
-        //bookings.add(bookings);
-        //AccommodationTableID.setItems(bookings);
-        //Printing out booking info typed in by user
         System.out.println("First name: " + FirstNameID.getText());
         System.out.println("Last name: " + LastNameID.getText());
         System.out.println("Phone number: " + PhoneNumberID.getText());

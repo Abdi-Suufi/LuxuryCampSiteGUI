@@ -24,6 +24,11 @@ public class Cabin {
         this.CabinDescription = CabinDescription;
     }
 
+    public Cabin() {
+    }
+
+    
+
     public String getCabinDescription() {
         return CabinDescription;
     }

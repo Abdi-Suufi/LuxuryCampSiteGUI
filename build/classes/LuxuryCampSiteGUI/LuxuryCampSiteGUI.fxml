@@ -7,11 +7,14 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="630.0" prefWidth="581.0" styleClass="bodybg" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="luxurycampsitegui.LuxuryCampSiteController">
+<AnchorPane id="AnchorPane" prefHeight="630.0" prefWidth="846.0" styleClass="bodybg" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="luxurycampsitegui.LuxuryCampSiteController">
     <children>
         <Text layoutX="14.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Area">
             <font>
@@ -19,19 +22,19 @@
             </font>
         </Text>
         <ComboBox fx:id="AreaBox" layoutX="62.0" layoutY="13.0" onAction="#SelectArea" prefWidth="150.0" promptText="Choose an option" />
-        <TextField fx:id="AreaDescriptionID" alignment="TOP_LEFT" editable="false" layoutX="256.0" layoutY="13.0" prefHeight="25.0" prefWidth="309.0" promptText="Select an area first" />
+        <TextField fx:id="AreaDescriptionID" alignment="TOP_LEFT" editable="false" layoutX="227.0" layoutY="13.0" prefHeight="25.0" prefWidth="341.0" promptText="Select an area first" />
         <Text layoutX="14.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Breakfast">
             <font>
                 <Font size="13.0" />
             </font>
         </Text>
-        <TextField editable="false" layoutX="138.0" layoutY="45.0" prefHeight="25.0" prefWidth="75.0" />
-        <Text layoutX="260.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number Require Cleaning">
+        <TextField fx:id="BreakfastNoID" editable="false" layoutX="138.0" layoutY="45.0" prefHeight="25.0" prefWidth="75.0" />
+        <Text layoutX="229.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number Require Cleaning">
             <font>
                 <Font size="13.0" />
             </font>
         </Text>
-        <TextField editable="false" layoutX="417.0" layoutY="45.0" prefHeight="25.0" prefWidth="82.0" />
+        <TextField fx:id="CleaningNoID" editable="false" layoutX="384.0" layoutY="45.0" prefHeight="25.0" prefWidth="82.0" />
         <TableView fx:id="AccommodationTableID" layoutX="14.0" layoutY="82.0" prefHeight="186.0" prefWidth="553.0">
             <columns>
                 <TableColumn fx:id="NoColumnID" prefWidth="52.0" text="No." />
@@ -80,63 +83,70 @@
         <TextField layoutX="142.0" layoutY="456.0" prefHeight="25.0" prefWidth="142.0" />
         <TextField layoutX="142.0" layoutY="493.0" prefHeight="25.0" prefWidth="142.0" />
         <TextArea editable="false" layoutX="20.0" layoutY="531.0" prefHeight="70.0" prefWidth="272.0" text="A modern canvas geodesic dome with large windows for star gazing. Outdoor space with pizza oven." wrapText="true" />
-        <TextField editable="false" layoutX="142.0" layoutY="383.0" />
-        <TextField editable="false" layoutX="142.0" layoutY="419.0" />
-        <TextField editable="false" layoutX="142.0" layoutY="456.0" />
-        <TextField editable="false" layoutX="142.0" layoutY="493.0" />
+        <TextField fx:id="AccommTypeID" editable="false" layoutX="142.0" layoutY="383.0" />
+        <TextField fx:id="AccommNoID" editable="false" layoutX="142.0" layoutY="419.0" />
+        <TextField fx:id="AccomodatesID" editable="false" layoutX="142.0" layoutY="456.0" />
+        <TextField fx:id="PricePerNightID" editable="false" layoutX="142.0" layoutY="493.0" />
         <TextArea fx:id="AreaDescription2ID" editable="false" layoutX="20.0" layoutY="531.0" prefHeight="87.0" prefWidth="272.0" />
-        <Text layoutX="324.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accommodation Reception">
+        <Text layoutX="606.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accommodation Reception">
             <font>
                 <Font size="18.0" />
             </font>
         </Text>
-        <Text layoutX="323.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+        <Text layoutX="595.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
             <font>
                 <Font size="14.0" />
             </font>
         </Text>
-        <Text layoutX="323.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
+        <Text layoutX="595.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
             <font>
                 <Font size="14.0" />
             </font>
         </Text>
-        <Text layoutX="311.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone No.">
+        <Text layoutX="582.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone No.">
             <font>
                 <Font size="14.0" />
             </font>
         </Text>
-        <Text layoutX="308.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number Guests">
+        <Text layoutX="579.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number Guests">
             <font>
                 <Font size="14.0" />
             </font>
         </Text>
-        <Text layoutX="313.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check In Date">
+        <Text layoutX="585.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check In Date">
             <font>
                 <Font size="14.0" />
             </font>
         </Text>
-        <Text layoutX="308.0" layoutY="520.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number Nights">
+        <Text layoutX="579.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number Nights">
             <font>
                 <Font size="14.0" />
             </font>
         </Text>
-        <TextField fx:id="FirstNameID" layoutX="414.0" layoutY="320.0" />
-        <TextField fx:id="LastNameID" layoutX="414.0" layoutY="353.0" />
-        <TextField fx:id="PhoneNumberID" layoutX="414.0" layoutY="392.0" />
-        <TextField fx:id="NumberOfGuestsID" layoutX="414.0" layoutY="427.0" />
-        <TextField fx:id="NumberOfNightsID" layoutX="414.0" layoutY="502.0" />
-        <CheckBox fx:id="BreakfastBoxID" layoutX="308.0" layoutY="537.0" mnemonicParsing="false" text="Breakfast Required">
+        <TextField fx:id="FirstNameID" layoutX="681.0" layoutY="45.0" />
+        <TextField fx:id="LastNameID" layoutX="681.0" layoutY="76.0" />
+        <TextField fx:id="PhoneNumberID" layoutX="681.0" layoutY="106.0" />
+        <TextField fx:id="NumberOfGuestsID" layoutX="681.0" layoutY="137.0" />
+        <TextField fx:id="NumberOfNightsID" layoutX="680.0" layoutY="198.0" />
+        <CheckBox fx:id="BreakfastBoxID" layoutX="645.0" layoutY="233.0" mnemonicParsing="false" text="Breakfast Required">
             <font>
                 <Font size="14.0" />
             </font>
         </CheckBox>
-        <Button layoutX="310.0" layoutY="566.0" mnemonicParsing="false" onAction="#CheckedIn" prefHeight="26.0" prefWidth="93.0" text="Check In" />
-        <Button layoutX="465.0" layoutY="566.0" mnemonicParsing="false" onAction="#CheckedOut" prefHeight="26.0" prefWidth="96.0" text="Check Out" />
-        <TextField fx:id="CheckInDateDayID" layoutX="419.0" layoutY="465.0" prefHeight="26.0" prefWidth="30.0" />
-        <Text layoutX="458.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
-        <TextField fx:id="CheckInDateMonthID" layoutX="473.0" layoutY="465.0" prefHeight="26.0" prefWidth="30.0" />
-        <Text layoutX="513.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
-        <TextField fx:id="CheckInDateYearID" layoutX="527.0" layoutY="465.0" prefHeight="26.0" prefWidth="30.0" />
+        <Button fx:id="checkInButtonID" layoutX="583.0" layoutY="262.0" mnemonicParsing="false" onAction="#CheckedIn" prefHeight="41.0" prefWidth="126.0" text="Check In" />
+        <Button fx:id="checkOutButtonID" layoutX="723.0" layoutY="262.0" mnemonicParsing="false" onAction="#CheckedOut" prefHeight="41.0" prefWidth="112.0" text="Check Out" />
+        <TextField fx:id="CheckInDateDayID" layoutX="687.0" layoutY="167.0" prefHeight="26.0" prefWidth="30.0" />
+        <Text layoutX="725.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
+        <TextField fx:id="CheckInDateMonthID" layoutX="739.0" layoutY="167.0" prefHeight="26.0" prefWidth="30.0" />
+        <Text layoutX="779.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
+        <TextField fx:id="CheckInDateYearID" layoutX="792.0" layoutY="167.0" prefHeight="26.0" prefWidth="30.0" />
+      <ImageView fitHeight="319.0" fitWidth="546.0" layoutX="297.0" layoutY="308.0" pickOnBounds="true">
+         <image>
+            <Image url="@campsiteimg.png" />
+         </image>
+      </ImageView>
+      <Line endX="-5.0" endY="258.0" layoutX="579.0" layoutY="38.0" startX="-5.0" startY="-27.0" stroke="#a1a1a1" />
+      <Line endX="4.0" endY="58.0" layoutX="217.0" layoutY="14.0" startX="4.0" startY="-4.0" stroke="#868686" />
       
     </children>
 </AnchorPane>
