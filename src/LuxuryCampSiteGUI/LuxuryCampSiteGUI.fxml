@@ -21,7 +21,7 @@
                 <Font size="18.0" />
             </font>
         </Text>
-        <ComboBox fx:id="AreaBox" layoutX="62.0" layoutY="13.0" onAction="#SelectArea" prefWidth="150.0" promptText="Choose an option" />
+        <ComboBox fx:id="AreaBox" layoutX="62.0" layoutY="13.0" prefWidth="150.0" promptText="Choose an option" />
         <TextField fx:id="AreaDescriptionID" alignment="TOP_LEFT" editable="false" layoutX="227.0" layoutY="13.0" prefHeight="25.0" prefWidth="341.0" promptText="Select an area first" />
         <Text layoutX="14.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Breakfast">
             <font>
