@@ -25,7 +25,6 @@ public class Cabin {
     }
 
     public Cabin() {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     
