@@ -133,8 +133,8 @@
                 <Font size="14.0" />
             </font>
         </CheckBox>
-        <Button fx:id="checkInButtonID" layoutX="583.0" layoutY="262.0" mnemonicParsing="false" onAction="#CheckedIn" prefHeight="41.0" prefWidth="126.0" text="Check In" />
-        <Button fx:id="checkOutButtonID" layoutX="723.0" layoutY="262.0" mnemonicParsing="false" onAction="#CheckedOut" prefHeight="41.0" prefWidth="112.0" text="Check Out" />
+        <Button fx:id="CheckInButtonID" disable="true" layoutX="583.0" layoutY="262.0" mnemonicParsing="false" onAction="#CheckedIn" prefHeight="41.0" prefWidth="126.0" text="Check In" />
+        <Button fx:id="CheckOutButtonID" disable="true" layoutX="723.0" layoutY="262.0" mnemonicParsing="false" onAction="#CheckedOut" prefHeight="41.0" prefWidth="112.0" text="Check Out" />
         <TextField fx:id="CheckInDateDayID" layoutX="687.0" layoutY="167.0" prefHeight="26.0" prefWidth="30.0" />
         <Text layoutX="725.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
         <TextField fx:id="CheckInDateMonthID" layoutX="739.0" layoutY="167.0" prefHeight="26.0" prefWidth="30.0" />

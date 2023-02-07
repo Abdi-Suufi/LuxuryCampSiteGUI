@@ -140,20 +140,24 @@ public class LuxuryCampSiteController implements Initializable {
         AreaBox.setOnAction(e -> {
             if (AreaBox.getSelectionModel().getSelectedItem().equals("Hilltop")) {
                 AreaDescriptionID.setText("Experience breathtaking panoramic views from the summit of a hill top and bask in the splendor of nature.");
+                enableCheckInOutButtons();
                 loadHilltopTable();
                 loadHilltopData();
             } else if (AreaBox.getSelectionModel().getSelectedItem().equals("Wild Meadow")) {
                 AreaDescriptionID.setText("Step into a world of untamed beauty with a visit to a wild meadow, be surrounded by towering grasses and wildflowers.");
+                enableCheckInOutButtons();
                 setCleaningAndBreakfastReq();
                 loadWildMeadowTable();
                 loadWildMeadowData();
             } else if (AreaBox.getSelectionModel().getSelectedItem().equals("Woodland")) {
                 AreaDescriptionID.setText("A woodland area echoing the sound of nature and wildlife, a haven for adventure seekers and nature lovers alike.");
+                enableCheckInOutButtons();
                 setCleaningAndBreakfastReq();
                 loadWoodlandTable();
                 loadWoodlandData();
             } else if (AreaBox.getSelectionModel().getSelectedItem().equals("Lakeview")) {
                 AreaDescriptionID.setText("Escape to a serene paradise with a stunning lakeview and gaze out at the still waters of a tranquil lake");
+                enableCheckInOutButtons();
                 setCleaningAndBreakfastReq();
                 loadLakeviewTable();
                 loadLakeviewData();
@@ -227,6 +231,11 @@ public class LuxuryCampSiteController implements Initializable {
     public void setCleaningAndBreakfastReq() {
         BreakfastNoID.setText("0");
         CleaningNoID.setText("0");
+    }
+    
+    public void enableCheckInOutButtons() {
+        CheckInButtonID.setDisable(false);
+        CheckOutButtonID.setDisable(false);
     }
     
     @FXML
