@@ -9,17 +9,50 @@ package LuxuryCampSiteGUI;
  * @author abdis
  */
 public class GuestCheckIn {
-    String guests;
+    int NumberCol;
+    String comtype;
+    String occupancys;
+    String availabilitys;
+    String Statuss;
+    String Guestss;
+    boolean Breakfastss;
 
-    public GuestCheckIn(String guests) {
-        this.guests = guests;
+    public GuestCheckIn(int NumberCol, String comtype, String occupancys, String availabilitys, String Statuss, String Guestss, boolean Breakfastss) {
+        this.NumberCol = NumberCol;
+        this.comtype = comtype;
+        this.occupancys = occupancys;
+        this.availabilitys = availabilitys;
+        this.Statuss = Statuss;
+        this.Guestss = Guestss;
+        this.Breakfastss = Breakfastss;
     }
 
-    public String getGuests() {
-        return guests;
+    public int getNumberCol() {
+        return NumberCol;
     }
 
-    public void setGuests(String guests) {
-        this.guests = guests;
+    public String getComtype() {
+        return comtype;
     }
+
+    public String getOccupancys() {
+        return occupancys;
+    }
+
+    public String getAvailabilitys() {
+        return availabilitys;
+    }
+
+    public String getStatuss() {
+        return Statuss;
+    }
+
+    public String getGuestss() {
+        return Guestss;
+    }
+
+    public boolean getBreakfastss() {
+        return Breakfastss;
+    }
+   
 }

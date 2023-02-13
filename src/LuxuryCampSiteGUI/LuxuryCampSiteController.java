@@ -191,7 +191,8 @@ public class LuxuryCampSiteController implements Initializable {
                 new AccomTable(1, "Geodesic Dome", "Unoccupied", "Available", "Clean", 0, "No"),
                 new AccomTable(2, "Geodesic Dome", "Unoccupied", "Available", "Clean", 0, "No"),
                 new AccomTable(3, "Geodesic Dome", "Unoccupied", "Available", "Clean", 0, "No"),
-                new AccomTable(4, "Geodesic Dome", "Unoccupied", "Available", "Clean", 0, "No")
+                new AccomTable(4, "Geodesic Dome", "Unoccupied", "Available", "Clean", 0, "No"),
+                new AccomTable(4,(AreaBox.getSelectionModel().getSelectedItem()), "Unoccupied", "Available", "Clean", 0, "No")
         );
         AccommodationTableID.setItems(woodlandList);
     }
@@ -242,7 +243,7 @@ public class LuxuryCampSiteController implements Initializable {
     
     @FXML
     private void CheckedIn(ActionEvent event) {
-        GuestCheckIn guestcheckin = new GuestCheckIn(NumberOfGuestsID.getText());
+        GuestCheckIn guestcheckin = new GuestCheckIn(6, (AreaBox.getSelectionModel().getSelectedItem()), "occupied", "Unavailable", "Clean", (NumberOfGuestsID.getText()) , (BreakfastBoxID.isSelected()));
         ObservableList<AccomTable> guestcheckins = AccommodationTableID.getItems();
         AccommodationTableID.setItems(guestcheckins);
         
@@ -321,6 +322,9 @@ public class LuxuryCampSiteController implements Initializable {
 
     @FXML
     private void CheckedOut(ActionEvent event) {
+        GuestCheckIn guestcheckin = new GuestCheckIn(6, (AreaBox.getSelectionModel().getSelectedItem()), "Unoccupied", "available", "Not clean", (NumberOfGuestsID.getText()) , (BreakfastBoxID.isSelected()));
+        ObservableList<AccomTable> guestcheckins = AccommodationTableID.getItems();
+        AccommodationTableID.setItems(guestcheckins);
 
         System.out.println("First name: " + FirstNameID.getText());
         System.out.println("Last name: " + LastNameID.getText());
