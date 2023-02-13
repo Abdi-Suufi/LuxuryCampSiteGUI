@@ -142,7 +142,7 @@
         <TextField fx:id="CheckInDateYearID" layoutX="792.0" layoutY="167.0" prefHeight="26.0" prefWidth="30.0" />
       <ImageView fitHeight="319.0" fitWidth="546.0" layoutX="297.0" layoutY="308.0" pickOnBounds="true">
          <image>
-            <Image url="@campsiteimg.png" />
+            <Image url="@campsite.png" />
          </image>
       </ImageView>
       <Line endX="-5.0" endY="258.0" layoutX="579.0" layoutY="38.0" startX="-5.0" startY="-27.0" stroke="#a1a1a1" />

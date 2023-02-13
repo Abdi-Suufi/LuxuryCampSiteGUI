@@ -21,6 +21,7 @@ import businessmodel.ShepherdHut;
 import businessmodel.GeodesicDome;
 import businessmodel.Cabin;
 import LuxuryCampSiteGUI.AccomTable; //idk why i have to import this but wont work without
+import LuxuryCampSiteGUI.GuestCheckIn;
 import javafx.collections.FXCollections;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
@@ -165,6 +166,7 @@ public class LuxuryCampSiteController implements Initializable {
 
         });
     }
+    
     public void loadHilltopTable() {
         ObservableList<AccomTable> hilltopList = FXCollections.observableArrayList(
                 new AccomTable(1, "Shepherd Hut", "Unoccupied", "Available", "Clean", 0, "No"),
@@ -240,6 +242,10 @@ public class LuxuryCampSiteController implements Initializable {
     
     @FXML
     private void CheckedIn(ActionEvent event) {
+        GuestCheckIn guestcheckin = new GuestCheckIn(NumberOfGuestsID.getText());
+        ObservableList<AccomTable> guestcheckins = AccommodationTableID.getItems();
+        AccommodationTableID.setItems(guestcheckins);
+        
         System.out.println("First name: " + FirstNameID.getText());
         System.out.println("Last name: " + LastNameID.getText());
         System.out.println("Phone number: " + PhoneNumberID.getText());

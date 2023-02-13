@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/abdis/Documents/GitHub/LuxuryCampSiteGUI/src/LuxuryCampSiteGUI/LuxuryCampSiteGUI.fxml</file>
-            <file>file:/C:/Users/abdis/Documents/GitHub/LuxuryCampSiteGUI/src/LuxuryCampSiteGUI/LuxuryCampSiteController.java</file>
             <file>file:/C:/Users/abdis/Documents/GitHub/LuxuryCampSiteGUI/src/LuxuryCampSiteGUI/LuxuryCampSiteGUI.java</file>
+            <file>file:/C:/Users/abdis/Documents/GitHub/LuxuryCampSiteGUI/src/businessmodel/Customer.java</file>
+            <file>file:/C:/Users/abdis/Documents/GitHub/LuxuryCampSiteGUI/src/LuxuryCampSiteGUI/LuxuryCampSiteGUI.fxml</file>
+            <file>file:/C:/Users/abdis/Documents/GitHub/LuxuryCampSiteGUI/src/LuxuryCampSiteGUI/GuestCheckIn.java</file>
             <file>file:/C:/Users/abdis/Documents/GitHub/LuxuryCampSiteGUI/src/LuxuryCampSiteGUI/AccomTable.java</file>
+            <file>file:/C:/Users/abdis/Documents/GitHub/LuxuryCampSiteGUI/src/LuxuryCampSiteGUI/LuxuryCampSiteController.java</file>
         </group>
     </open-files>
 </project-private>
