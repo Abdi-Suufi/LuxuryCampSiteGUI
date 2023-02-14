@@ -14,10 +14,10 @@ public class AccomTable {
     private String OccupancyColumnID;
     private String AvailabilityColumnID;
     private String StatusColumnID;
-    private int GuestsColumnID;
+    private String GuestsColumnID;
     private String BreakfastColumnID;
     
-    public AccomTable(int NoColumnID, String AccommTypeColumnID, String OccupancyColumnID, String AvailabilityColumnID, String StatusColumnID, int GuestsColumnID, String BreakfastColumnID) {
+    public AccomTable(int NoColumnID, String AccommTypeColumnID, String OccupancyColumnID, String AvailabilityColumnID, String StatusColumnID, String GuestsColumnID, String BreakfastColumnID) {
         this.NoColumnID = NoColumnID;
         this.AccommTypeColumnID = AccommTypeColumnID;
         this.OccupancyColumnID = OccupancyColumnID;
@@ -47,7 +47,7 @@ public class AccomTable {
         return StatusColumnID;
     }
 
-    public int getGuestsColumnID() {
+    public String getGuestsColumnID() {
         return GuestsColumnID;
     }
 

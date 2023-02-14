@@ -169,39 +169,38 @@ public class LuxuryCampSiteController implements Initializable {
     
     public void loadHilltopTable() {
         ObservableList<AccomTable> hilltopList = FXCollections.observableArrayList(
-                new AccomTable(1, "Shepherd Hut", "Unoccupied", "Available", "Clean", 0, "No"),
-                new AccomTable(2, "Shepherd Hut", "Unoccupied", "Available", "Clean", 0, "No"),
-                new AccomTable(3, "Shepherd Hut", "Unoccupied", "Available", "Clean", 0, "No")
+                new AccomTable(1, "Shepherd Hut", "Unoccupied", "Available", "Clean", "0", "No"),
+                new AccomTable(2, "Shepherd Hut", "Unoccupied", "Available", "Clean", "0", "No"),
+                new AccomTable(3, "Shepherd Hut", "Unoccupied", "Available", "Clean", "0", "No")
         );
         AccommodationTableID.setItems(hilltopList);
     }
 
     public void loadWildMeadowTable() {
         ObservableList<AccomTable> wildMeadowList = FXCollections.observableArrayList(
-                new AccomTable(1, "Yurt", "Unoccupied", "Available", "Clean", 0, "No"),
-                new AccomTable(2, "Yurt", "Unoccupied", "Available", "Clean", 0, "No"),
-                new AccomTable(3, "Yurt", "Unoccupied", "Available", "Clean", 0, "No"),
-                new AccomTable(4, "Yurt", "Unoccupied", "Available", "Clean", 0, "No")
+                new AccomTable(1, "Yurt", "Unoccupied", "Available", "Clean", "0", "No"),
+                new AccomTable(2, "Yurt", "Unoccupied", "Available", "Clean", "0", "No"),
+                new AccomTable(3, "Yurt", "Unoccupied", "Available", "Clean", "0", "No"),
+                new AccomTable(4, "Yurt", "Unoccupied", "Available", "Clean", "0", "No")
         );
         AccommodationTableID.setItems(wildMeadowList);
     }
 
     public void loadWoodlandTable() {
         ObservableList<AccomTable> woodlandList = FXCollections.observableArrayList(
-                new AccomTable(1, "Geodesic Dome", "Unoccupied", "Available", "Clean", 0, "No"),
-                new AccomTable(2, "Geodesic Dome", "Unoccupied", "Available", "Clean", 0, "No"),
-                new AccomTable(3, "Geodesic Dome", "Unoccupied", "Available", "Clean", 0, "No"),
-                new AccomTable(4, "Geodesic Dome", "Unoccupied", "Available", "Clean", 0, "No"),
-                new AccomTable(4,(AreaBox.getSelectionModel().getSelectedItem()), "Unoccupied", "Available", "Clean", 0, "No")
+                new AccomTable(1, "Geodesic Dome", "Unoccupied", "Available", "Clean", "0", "No"),
+                new AccomTable(2, "Geodesic Dome", "Unoccupied", "Available", "Clean", "0", "No"),
+                new AccomTable(3, "Geodesic Dome", "Unoccupied", "Available", "Clean", "0", "No"),
+                new AccomTable(4, "Geodesic Dome", "Unoccupied", "Available", "Clean", "0", "No")
         );
         AccommodationTableID.setItems(woodlandList);
     }
 
     public void loadLakeviewTable() {
         ObservableList<AccomTable> lakeviewList = FXCollections.observableArrayList(
-                new AccomTable(1, "Cabin", "Unoccupied", "Available", "Clean", 0, "No"),
-                new AccomTable(2, "Cabin", "Unoccupied", "Available", "Clean", 0, "No"),
-                new AccomTable(3, "Cabin", "Unoccupied", "Available", "Clean", 0, "No")
+                new AccomTable(1, "Cabin", "Unoccupied", "Available", "Clean", "0", "No"),
+                new AccomTable(2, "Cabin", "Unoccupied", "Available", "Clean", "0", "No"),
+                new AccomTable(3, "Cabin", "Unoccupied", "Available", "Clean", "0", "No")
         );
         AccommodationTableID.setItems(lakeviewList);
     }
@@ -243,7 +242,7 @@ public class LuxuryCampSiteController implements Initializable {
     
     @FXML
     private void CheckedIn(ActionEvent event) {
-        GuestCheckIn guestcheckin = new GuestCheckIn(6, (AreaBox.getSelectionModel().getSelectedItem()), "occupied", "Unavailable", "Clean", (NumberOfGuestsID.getText()) , (BreakfastBoxID.isSelected()));
+        AccomTable guestcheckin = new AccomTable(6, (AreaBox.getSelectionModel().getSelectedItem()), "occupied", "Unavailable", "Clean", (NumberOfGuestsID.getText()) , "no");
         ObservableList<AccomTable> guestcheckins = AccommodationTableID.getItems();
         AccommodationTableID.setItems(guestcheckins);
         
