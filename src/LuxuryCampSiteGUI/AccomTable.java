@@ -15,15 +15,46 @@ public class AccomTable {
     private String AvailabilityColumnID;
     private String StatusColumnID;
     private String GuestsColumnID;
-    private String BreakfastColumnID;
+    private boolean BreakfastColumnID;
     
-    public AccomTable(int NoColumnID, String AccommTypeColumnID, String OccupancyColumnID, String AvailabilityColumnID, String StatusColumnID, String GuestsColumnID, String BreakfastColumnID) {
+    public AccomTable(int NoColumnID, String AccommTypeColumnID, String OccupancyColumnID, String AvailabilityColumnID, String StatusColumnID, String GuestsColumnID, boolean BreakfastColumnID) {
         this.NoColumnID = NoColumnID;
         this.AccommTypeColumnID = AccommTypeColumnID;
         this.OccupancyColumnID = OccupancyColumnID;
         this.AvailabilityColumnID = AvailabilityColumnID;
         this.StatusColumnID = StatusColumnID;
         this.GuestsColumnID = GuestsColumnID;
+        this.BreakfastColumnID = BreakfastColumnID;
+    }
+
+    public AccomTable() {
+    }
+
+    public void setNoColumnID(int NoColumnID) {
+        this.NoColumnID = NoColumnID;
+    }
+
+    public void setAccommTypeColumnID(String AccommTypeColumnID) {
+        this.AccommTypeColumnID = AccommTypeColumnID;
+    }
+
+    public void setOccupancyColumnID(String OccupancyColumnID) {
+        this.OccupancyColumnID = OccupancyColumnID;
+    }
+
+    public void setAvailabilityColumnID(String AvailabilityColumnID) {
+        this.AvailabilityColumnID = AvailabilityColumnID;
+    }
+
+    public void setStatusColumnID(String StatusColumnID) {
+        this.StatusColumnID = StatusColumnID;
+    }
+
+    public void setGuestsColumnID(String GuestsColumnID) {
+        this.GuestsColumnID = GuestsColumnID;
+    }
+
+    public void setBreakfastColumnID(boolean BreakfastColumnID) {
         this.BreakfastColumnID = BreakfastColumnID;
     }
 
@@ -51,7 +82,7 @@ public class AccomTable {
         return GuestsColumnID;
     }
 
-    public String getBreakfastColumnID() {
+    public boolean getBreakfastColumnID() {
         return BreakfastColumnID;
     }
 }

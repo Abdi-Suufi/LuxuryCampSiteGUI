@@ -138,6 +138,7 @@ public class LuxuryCampSiteController implements Initializable {
         GuestsColumnID.setCellValueFactory(new PropertyValueFactory<AccomTable, Integer>("GuestsColumnID"));
         BreakfastColumnID.setCellValueFactory(new PropertyValueFactory<AccomTable, String>("BreakfastColumnID"));
         
+        //Info change depending on area selected
         AreaBox.setOnAction(e -> {
             if (AreaBox.getSelectionModel().getSelectedItem().equals("Hilltop")) {
                 AreaDescriptionID.setText("Experience breathtaking panoramic views from the summit of a hill top and bask in the splendor of nature.");
@@ -166,41 +167,43 @@ public class LuxuryCampSiteController implements Initializable {
 
         });
     }
-    
+    //Adding dummy data to table
     public void loadHilltopTable() {
         ObservableList<AccomTable> hilltopList = FXCollections.observableArrayList(
-                new AccomTable(1, "Shepherd Hut", "Unoccupied", "Available", "Clean", "0", "No"),
-                new AccomTable(2, "Shepherd Hut", "Unoccupied", "Available", "Clean", "0", "No"),
-                new AccomTable(3, "Shepherd Hut", "Unoccupied", "Available", "Clean", "0", "No")
+                new AccomTable(1, "Shepherd Hut", "Unoccupied", "Available", "Clean", "0", true),
+                new AccomTable(2, "Shepherd Hut", "Unoccupied", "Available", "Clean", "0", true),
+                new AccomTable(3, "Shepherd Hut", "Unoccupied", "Available", "Clean", "0", true),
+                new AccomTable(3, "Shepherd Hut", "Unoccupied", "Available", "Clean", "0", true)
         );
         AccommodationTableID.setItems(hilltopList);
     }
 
     public void loadWildMeadowTable() {
         ObservableList<AccomTable> wildMeadowList = FXCollections.observableArrayList(
-                new AccomTable(1, "Yurt", "Unoccupied", "Available", "Clean", "0", "No"),
-                new AccomTable(2, "Yurt", "Unoccupied", "Available", "Clean", "0", "No"),
-                new AccomTable(3, "Yurt", "Unoccupied", "Available", "Clean", "0", "No"),
-                new AccomTable(4, "Yurt", "Unoccupied", "Available", "Clean", "0", "No")
+                new AccomTable(1, "Yurt", "Unoccupied", "Available", "Clean", "0", true),
+                new AccomTable(2, "Yurt", "Unoccupied", "Available", "Clean", "0", true),
+                new AccomTable(3, "Yurt", "Unoccupied", "Available", "Clean", "0", true),
+                new AccomTable(4, "Yurt", "Unoccupied", "Available", "Clean", "0", true)
         );
         AccommodationTableID.setItems(wildMeadowList);
     }
 
     public void loadWoodlandTable() {
         ObservableList<AccomTable> woodlandList = FXCollections.observableArrayList(
-                new AccomTable(1, "Geodesic Dome", "Unoccupied", "Available", "Clean", "0", "No"),
-                new AccomTable(2, "Geodesic Dome", "Unoccupied", "Available", "Clean", "0", "No"),
-                new AccomTable(3, "Geodesic Dome", "Unoccupied", "Available", "Clean", "0", "No"),
-                new AccomTable(4, "Geodesic Dome", "Unoccupied", "Available", "Clean", "0", "No")
+                new AccomTable(1, "Geodesic Dome", "Unoccupied", "Available", "Clean", "0", true),
+                new AccomTable(2, "Geodesic Dome", "Unoccupied", "Available", "Clean", "0", true),
+                new AccomTable(3, "Geodesic Dome", "Unoccupied", "Available", "Clean", "0", true),
+                new AccomTable(4, "Geodesic Dome", "Unoccupied", "Available", "Clean", "0", true)
         );
         AccommodationTableID.setItems(woodlandList);
     }
 
     public void loadLakeviewTable() {
         ObservableList<AccomTable> lakeviewList = FXCollections.observableArrayList(
-                new AccomTable(1, "Cabin", "Unoccupied", "Available", "Clean", "0", "No"),
-                new AccomTable(2, "Cabin", "Unoccupied", "Available", "Clean", "0", "No"),
-                new AccomTable(3, "Cabin", "Unoccupied", "Available", "Clean", "0", "No")
+                new AccomTable(1, "Cabin", "Unoccupied", "Available", "Clean", "0", true),
+                new AccomTable(2, "Cabin", "Unoccupied", "Available", "Clean", "0", true),
+                new AccomTable(3, "Cabin", "Unoccupied", "Available", "Clean", "0", true),
+                new AccomTable(4, "Cabin", "Unoccupied", "Available", "Clean", "0", true)
         );
         AccommodationTableID.setItems(lakeviewList);
     }
@@ -242,9 +245,24 @@ public class LuxuryCampSiteController implements Initializable {
     
     @FXML
     private void CheckedIn(ActionEvent event) {
-        AccomTable guestcheckin = new AccomTable(6, (AreaBox.getSelectionModel().getSelectedItem()), "occupied", "Unavailable", "Clean", (NumberOfGuestsID.getText()) , "no");
-        ObservableList<AccomTable> guestcheckins = AccommodationTableID.getItems();
-        AccommodationTableID.setItems(guestcheckins);
+        System.out.println("Guest check in successful!");{
+        int i;
+        i=5;
+        AccomTable newguest = new AccomTable();
+        newguest.setNoColumnID(i);
+        newguest.setAccommTypeColumnID(AccommTypeID.getText());
+        newguest.setOccupancyColumnID("Occupied");
+        newguest.setAvailabilityColumnID("Unavailable");
+        newguest.setStatusColumnID("Clean");
+        newguest.setGuestsColumnID(NumberOfGuestsID.getText());
+        newguest.setBreakfastColumnID(true);
+        AccommodationTableID.getItems().add(newguest);
+        i=i+1;
+        }
+        /*ObservableList<AccomTable> NewGuest = FXCollections.observableArrayList(
+        new AccomTable(1, (AccommTypeID.getText()), "Unoccupied", "Unavailable", "Clean", "0", "No")
+                );
+        AccommodationTableID.setItems(NewGuest); //Deletes dummy data idk how to make it add onto*/
         
         System.out.println("First name: " + FirstNameID.getText());
         System.out.println("Last name: " + LastNameID.getText());
@@ -271,7 +289,7 @@ public class LuxuryCampSiteController implements Initializable {
         if (FirstNameID.getText().length() <= 2) {
             FirstNameID.setStyle("-fx-border-color: red;");//Will turn the text box red when not valid
         } else {
-            FirstNameID.setStyle(null); //Needed else statement to revert text box when valid
+            FirstNameID.setStyle(null); //Need else statement to revert text box when valid
         }
         if (LastNameID.getText().length() <= 2) {
             LastNameID.setStyle("-fx-border-color: red;");
@@ -316,14 +334,22 @@ public class LuxuryCampSiteController implements Initializable {
         }
         
         System.out.println("Checked In!");
-
+        
+        
     }
 
     @FXML
     private void CheckedOut(ActionEvent event) {
-        GuestCheckIn guestcheckin = new GuestCheckIn(6, (AreaBox.getSelectionModel().getSelectedItem()), "Unoccupied", "available", "Not clean", (NumberOfGuestsID.getText()) , (BreakfastBoxID.isSelected()));
-        ObservableList<AccomTable> guestcheckins = AccommodationTableID.getItems();
-        AccommodationTableID.setItems(guestcheckins);
+        System.out.println("Guest check out successful!");
+        AccomTable newguest = new AccomTable();
+        newguest.setNoColumnID(5);
+        newguest.setAccommTypeColumnID(AccommTypeID.getText());
+        newguest.setOccupancyColumnID("Unoccupied");
+        newguest.setAvailabilityColumnID("Available");
+        newguest.setStatusColumnID("Unclean");
+        newguest.setGuestsColumnID(NumberOfGuestsID.getText());
+        newguest.setBreakfastColumnID(true);
+        AccommodationTableID.getItems().add(newguest);
 
         System.out.println("First name: " + FirstNameID.getText());
         System.out.println("Last name: " + LastNameID.getText());
