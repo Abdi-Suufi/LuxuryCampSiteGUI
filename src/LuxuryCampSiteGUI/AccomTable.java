@@ -29,35 +29,6 @@ public class AccomTable {
 
     public AccomTable() {
     }
-
-    public void setNoColumnID(int NoColumnID) {
-        this.NoColumnID = NoColumnID;
-    }
-
-    public void setAccommTypeColumnID(String AccommTypeColumnID) {
-        this.AccommTypeColumnID = AccommTypeColumnID;
-    }
-
-    public void setOccupancyColumnID(String OccupancyColumnID) {
-        this.OccupancyColumnID = OccupancyColumnID;
-    }
-
-    public void setAvailabilityColumnID(String AvailabilityColumnID) {
-        this.AvailabilityColumnID = AvailabilityColumnID;
-    }
-
-    public void setStatusColumnID(String StatusColumnID) {
-        this.StatusColumnID = StatusColumnID;
-    }
-
-    public void setGuestsColumnID(String GuestsColumnID) {
-        this.GuestsColumnID = GuestsColumnID;
-    }
-
-    public void setBreakfastColumnID(boolean BreakfastColumnID) {
-        this.BreakfastColumnID = BreakfastColumnID;
-    }
-
     public int getNoColumnID() {
         return NoColumnID;
     }
