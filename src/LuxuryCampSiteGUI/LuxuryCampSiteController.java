@@ -150,32 +150,32 @@ public class LuxuryCampSiteController implements Initializable {
             if (AreaBox.getSelectionModel().getSelectedItem().equals("Hilltop")) {
                 AreaDescriptionID.setText("Experience breathtaking panoramic views from the summit of a hill top and bask in the splendor of nature.");
                 enableCheckInOutButtons();
-                loadHilltopTable();
-                loadHilltopData();
+                HilltopTable();
+                HilltopData();
             } else if (AreaBox.getSelectionModel().getSelectedItem().equals("Wild Meadow")) {
                 AreaDescriptionID.setText("Step into a world of untamed beauty with a visit to a wild meadow, be surrounded by towering grasses and wildflowers.");
                 enableCheckInOutButtons();
                 setCleaningAndBreakfastReq();
-                loadWildMeadowTable();
-                loadWildMeadowData();
+                WildMeadowTable();
+                WildMeadowData();
             } else if (AreaBox.getSelectionModel().getSelectedItem().equals("Woodland")) {
                 AreaDescriptionID.setText("A woodland area echoing the sound of nature and wildlife, a haven for adventure seekers and nature lovers alike.");
                 enableCheckInOutButtons();
                 setCleaningAndBreakfastReq();
-                loadWoodlandTable();
-                loadWoodlandData();
+                WoodlandTable();
+                WoodlandData();
             } else if (AreaBox.getSelectionModel().getSelectedItem().equals("Lakeview")) {
                 AreaDescriptionID.setText("Escape to a serene paradise with a stunning lakeview and gaze out at the still waters of a tranquil lake");
                 enableCheckInOutButtons();
                 setCleaningAndBreakfastReq();
-                loadLakeviewTable();
-                loadLakeviewData();
+                LakeviewTable();
+                LakeviewData();
             }
 
         });
     }
     //Adding dummy data to table
-    public void loadHilltopTable() {
+    public void HilltopTable() {
         ObservableList<AccomTable> hilltopList = FXCollections.observableArrayList(
                 new AccomTable(1, "Shepherd Hut", "Unoccupied", "Available", "Clean", "0", true),
                 new AccomTable(2, "Shepherd Hut", "Unoccupied", "Available", "Clean", "0", true),
@@ -184,7 +184,7 @@ public class LuxuryCampSiteController implements Initializable {
         AccommodationTableID.setItems(hilltopList);
     }
 
-    public void loadWildMeadowTable() {
+    public void WildMeadowTable() {
         ObservableList<AccomTable> wildMeadowList = FXCollections.observableArrayList(
                 new AccomTable(1, "Yurt", "Unoccupied", "Available", "Clean", "0", true),
                 new AccomTable(2, "Yurt", "Unoccupied", "Available", "Clean", "0", true),
@@ -194,7 +194,7 @@ public class LuxuryCampSiteController implements Initializable {
         AccommodationTableID.setItems(wildMeadowList);
     }
 
-    public void loadWoodlandTable() {
+    public void WoodlandTable() {
         ObservableList<AccomTable> woodlandList = FXCollections.observableArrayList(
                 new AccomTable(1, "Geodesic Dome", "Unoccupied", "Available", "Clean", "0", true),
                 new AccomTable(2, "Geodesic Dome", "Unoccupied", "Available", "Clean", "0", true),
@@ -204,7 +204,7 @@ public class LuxuryCampSiteController implements Initializable {
         AccommodationTableID.setItems(woodlandList);
     }
 
-    public void loadLakeviewTable() {
+    public void LakeviewTable() {
         ObservableList<AccomTable> lakeviewList = FXCollections.observableArrayList(
                 new AccomTable(1, "Cabin", "Unoccupied", "Available", "Clean", "0", true),
                 new AccomTable(2, "Cabin", "Unoccupied", "Available", "Clean", "0", true),
@@ -213,26 +213,26 @@ public class LuxuryCampSiteController implements Initializable {
         AccommodationTableID.setItems(lakeviewList);
     }
     
-    public void loadHilltopData() {
+    public void HilltopData() {
         AccommTypeID.setText("Shepherd Hut");
         AccomodatesID.setText("3");
         PricePerNightID.setText("£140");
 
     }
 
-    public void loadWildMeadowData() {
+    public void WildMeadowData() {
         AccommTypeID.setText("Yurt");
         AccomodatesID.setText("2");
         PricePerNightID.setText("£110");
     }
 
-    public void loadWoodlandData() {
+    public void WoodlandData() {
         AccommTypeID.setText("Geodesic Dome");
         AccomodatesID.setText("2");
         PricePerNightID.setText("£120");
     }
 
-    public void loadLakeviewData() {
+    public void LakeviewData() {
         AccommTypeID.setText("Cabin");
         AccomodatesID.setText("4");
         PricePerNightID.setText("£160");
@@ -250,6 +250,65 @@ public class LuxuryCampSiteController implements Initializable {
     
     @FXML
     private void CheckedIn(ActionEvent event) {
+        //Validation for for user input
+        //
+        String firstName = FirstNameID.getText();
+        String lastName = LastNameID.getText();
+        String phonenumber = PhoneNumberID.getText();
+        
+        //testing to see if box will go red from changing to this
+        String redbox = ("fx-border-color: red;");
+        if (firstName.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Invalid First Name");
+            alert.setContentText("First name cannot be empty");
+            LastNameID.setStyle("-fx-border-color: red;");
+            alert.showAndWait();
+        }
+        
+        if (lastName.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Invalid First Name");
+            alert.setContentText("Last name cannot be empty");
+            LastNameID.setStyle("-fx-border-color: red;");
+            alert.showAndWait();
+        }
+        //validation for if any number are in name text field
+        for (int i = 0; i < firstName.length(); i++) {
+            if (!Character.isLetter(firstName.charAt(i))) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Invalid First Name");
+                alert.setContentText("First name can only contain letters");
+                FirstNameID.setStyle(redbox);
+                alert.showAndWait();
+            }
+        }
+        
+        for (int i = 0; i < lastName.length(); i++) {
+            if (!Character.isLetter(lastName.charAt(i))) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Invalid First Name");
+                alert.setContentText("First name can only contain letters");
+                LastNameID.setStyle(redbox);
+                alert.showAndWait();
+            }
+        }
+        
+        if (phonenumber.isEmpty()) {
+        
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error!");
+            alert.setHeaderText("Invalid phone number");
+            alert.setContentText("Phone number cannot be empty");
+            PhoneNumberID.setStyle(redbox);
+            alert.showAndWait();
+    }
+        
+        
         System.out.println("Guest check in successful!");
         
         System.out.println("First name: " + FirstNameID.getText());
@@ -265,7 +324,7 @@ public class LuxuryCampSiteController implements Initializable {
         } else {
             System.out.println("Breakfast not required");
         }
-
+        
         //Doesnt apply very well but may be fixed to make code shorter
         //if (FirstNameID.getText(). length()<= 2 || LastNameID.getText(). length()<=2) {
         //  FirstNameID.setStyle("-fx-border-color: red;");
@@ -274,7 +333,8 @@ public class LuxuryCampSiteController implements Initializable {
         //else
         //  FirstNameID.setStyle(null);
         //Validation for booking info
-        
+         
+        //selectedindex? idk how to make it get the selected row's status column
         if (StatusColumnID.getText().equals("Unclean")) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
@@ -282,73 +342,12 @@ public class LuxuryCampSiteController implements Initializable {
                 alert.setContentText("Room must be clean before booking");
                 alert.showAndWait();
         }
-        String firstName = FirstNameID.getText();
-
-        for (int i = 0; i < firstName.length(); i++) {
-            if (!Character.isLetter(firstName.charAt(i))) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Invalid First Name");
-                alert.setContentText("First name can only contain letters");
-                alert.showAndWait();
-            }
-        }
-    
-        if (firstName.isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Invalid First Name");
-            alert.setContentText("First name cannot be empty");
-            alert.showAndWait();
-        }
-    
-        if (LastNameID.getText().length() <= 2) {
-            LastNameID.setStyle("-fx-border-color: red;");
-        } else {
-            LastNameID.setStyle(null);
-        }
-
-        if (PhoneNumberID.getText().length() >= 12 || PhoneNumberID.getText().length() < 11) {
-            PhoneNumberID.setStyle("-fx-border-color: red;");
-        } else {
-            PhoneNumberID.setStyle(null);
-        }
-
-        if (NumberOfGuestsID.getText().length() < 1 || NumberOfGuestsID.getText().length() > 2) {
-            NumberOfGuestsID.setStyle("-fx-border-color:red;");
-        } else {
-            NumberOfGuestsID.setStyle(null);
-        }
-
-        if (CheckInDateDayID.getText().length() > 2 || CheckInDateDayID.getText().length() < 1) { //Characters not value, i forget
-            CheckInDateDayID.setStyle("-fx-border-color:red;");
-        } else {
-            CheckInDateDayID.setStyle(null);
-        }
-
-        if (CheckInDateMonthID.getText().length() > 2 || CheckInDateMonthID.getText().length() < 1) {
-            CheckInDateMonthID.setStyle("-fx-border-color:red;");
-        } else {
-            CheckInDateMonthID.setStyle(null);
-        }
-        
-        if (CheckInDateYearID.getText().length() > 2 || CheckInDateYearID.getText().length() < 1) {
-            CheckInDateYearID.setStyle("-fx-border-color:red;");
-        } else {
-            CheckInDateYearID.setStyle(null);
-        }
-        
-        if (NumberOfNightsID.getText().length() > 2 || NumberOfNightsID.getText().length() < 1) {
-            NumberOfNightsID.setStyle("-fx-border-color:red;");
-        } else {
-            NumberOfNightsID.setStyle(null);
-        }
         
         System.out.println("Checked In!");
         
         
     }
-
+    
     @FXML
     private void CheckedOut(ActionEvent event) {
         System.out.println("Guest check out successful!");
