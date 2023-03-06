@@ -334,7 +334,7 @@ public class campsiteGUIController implements Initializable {
                 return false; // Validation fails
             }
         }
-        //checks to see if textfeild is empty
+        //checks to see if textfield is empty
         if (firstName.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
