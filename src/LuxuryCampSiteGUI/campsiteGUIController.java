@@ -302,6 +302,7 @@ public class campsiteGUIController implements Initializable {
                     new Table(3, "Cabin", "Unoccupied", "Available", "Clean", 0, "No")
             ));
         }
+        
         table.setItems(FXCollections.observableArrayList(originalLakeviewAccommodations));
         areaDescriptionTextField.setText("Enjoy stunning views of the lake and surrounding forests in the comfort of a cozy cabin.");
         accommodationTypeTextField.setText("Cabin");
