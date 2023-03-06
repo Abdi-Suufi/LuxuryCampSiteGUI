@@ -1,3 +1,3 @@
 # LuxuryCampSiteGUI
 
-test
+GUI works fine, test controller file using JUNIT
