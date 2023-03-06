@@ -616,7 +616,7 @@ public class campsiteGUIController implements Initializable {
     }
     @FXML
     void checkedIn(ActionEvent event) {
-
+        System.out.println("Successfully checked in guest!");
         // validation on first name
         if (!firstNameValidation()) {
             return; // Stops execution if validation fails
@@ -670,7 +670,8 @@ public class campsiteGUIController implements Initializable {
         table.refresh();
 
         copyUserInputToOverview();
-
+        
+        //Textfields clear after you finished checking in
         firstNameTextField.clear();
         lastNameTextField.clear();
         telephoneTextField.clear();
@@ -685,7 +686,7 @@ public class campsiteGUIController implements Initializable {
     void checkedOut(ActionEvent event) {
         System.out.println("Successfully checked out guest!");
         
-        //shortcut variable
+        //selected
         String currentOccupancy = occupancyCol.getCellData(table.getSelectionModel().getSelectedItem());
         String currentAvailability = availabilityCol.getCellData(table.getSelectionModel().getSelectedItem());
         String currentCleanStatus = statusCol.getCellData(table.getSelectionModel().getSelectedItem());
