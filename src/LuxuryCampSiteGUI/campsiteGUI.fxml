@@ -237,7 +237,7 @@
       </Button>
       <ImageView fitHeight="164.0" fitWidth="463.0" layoutX="768.0" layoutY="653.0" pickOnBounds="true">
          <image>
-            <Image url="@My%20project.png" />
+            <Image url="@guibg.png" />
          </image>
       </ImageView>
    </children>
