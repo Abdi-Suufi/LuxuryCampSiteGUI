@@ -179,8 +179,9 @@ public class campsiteGUIController implements Initializable {
         guestsCol.setCellValueFactory(new PropertyValueFactory<>("guests"));
         breakfastCol.setCellValueFactory(new PropertyValueFactory<>("breakfast"));
 
-        //will add the various options to both the area and cleaning status drop-downs
+        //will add all the various options to both the area and cleaning status drop-downs
         areaComboBox.getItems().addAll(areas);
+        //will add all the various options to the cleaning status drop-downs
         cleaningStatusComboBox.getItems().addAll(cleaningStatus);
 
         isTableRowSelected();//disables update, check in/out button if table row not selected
