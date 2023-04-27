@@ -1,3 +1,3 @@
 # LuxuryCampSiteGUI
 
-GUI works fine, test controller file using JUNIT
+GUI of a campsitesystem for booking and updating cleaning status of guests at given accomodations.
