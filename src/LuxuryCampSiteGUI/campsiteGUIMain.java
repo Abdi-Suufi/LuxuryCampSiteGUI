@@ -14,8 +14,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
+import javafx.scene.image.Image;
 
 public class campsiteGUIMain extends Application {
     @Override
@@ -23,6 +23,10 @@ public class campsiteGUIMain extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(campsiteGUIMain.class.getResource("campsiteGUI.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1237, 825);
         stage.setTitle("Luxury Camp Site System");
+        
+        Image bgimg = new Image("LuxuryCampSiteGUI/gui_image.png");
+        stage.getIcons().add(bgimg);
+        
         stage.setScene(scene);
         stage.show();
     }
